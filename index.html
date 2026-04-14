@@ -387,7 +387,6 @@
     padding: .15rem .55rem; border-radius: 2px;
   }
 
-  /* ── GALLERY ── */
   .gallery {
     background: var(--gray-lite);
     padding: 5rem 0;
@@ -420,39 +419,24 @@
     z-index: 2;
   }
 
-  /* Hide extra rows beyond the first 3 */
-  .gallery-item.hidden-photo {
-    display: none;
-  }
-  .gallery-item.hidden-photo.visible {
-    display: block;
-  }
+  .gallery-item.hidden-photo { display: none; }
+  .gallery-item.hidden-photo.visible { display: block; }
 
-  .show-more-wrap {
-    text-align: center;
-    margin-top: 2rem;
-  }
+  .show-more-wrap { text-align: center; margin-top: 2rem; }
 
   .btn-show-more {
     background: transparent;
     border: 2px solid var(--orange);
     color: var(--orange);
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: .9rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    padding: .7rem 2rem;
-    border-radius: 3px;
+    font-size: .9rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    padding: .7rem 2rem; border-radius: 3px;
     cursor: pointer;
     transition: background .2s, color .2s;
   }
-  .btn-show-more:hover {
-    background: var(--orange);
-    color: #fff;
-  }
+  .btn-show-more:hover { background: var(--orange); color: #fff; }
 
-  /* ── LIGHTBOX ── */
   .lightbox {
     display: none;
     position: fixed; inset: 0; z-index: 9999;
@@ -471,19 +455,15 @@
   }
 
   .lightbox-img {
-    max-width: 85vw;
-    max-height: 85vh;
-    border-radius: 4px;
-    object-fit: contain;
-    display: block;
+    max-width: 85vw; max-height: 85vh;
+    border-radius: 4px; object-fit: contain; display: block;
   }
 
   .lightbox-close {
     position: fixed; top: 1.2rem; right: 1.5rem;
     color: #fff; font-size: 2rem; cursor: pointer;
     background: none; border: none; line-height: 1;
-    opacity: .7; transition: opacity .2s;
-    z-index: 10001;
+    opacity: .7; transition: opacity .2s; z-index: 10001;
   }
   .lightbox-close:hover { opacity: 1; }
 
@@ -492,15 +472,11 @@
     top: 50%; transform: translateY(-50%);
     background: rgba(255,255,255,.1);
     border: 1px solid rgba(255,255,255,.2);
-    color: #fff;
-    font-size: 1.6rem;
-    width: 48px; height: 48px;
-    border-radius: 50%;
+    color: #fff; font-size: 1.6rem;
+    width: 48px; height: 48px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    cursor: pointer;
-    transition: background .2s;
-    z-index: 10001;
-    user-select: none;
+    cursor: pointer; transition: background .2s;
+    z-index: 10001; user-select: none;
   }
   .lightbox-nav:hover { background: rgba(255,255,255,.2); }
   .lightbox-prev { left: 1.5rem; }
@@ -509,17 +485,11 @@
   .lightbox-counter {
     position: fixed; bottom: 1.5rem; left: 50%;
     transform: translateX(-50%);
-    color: rgba(255,255,255,.5);
-    font-size: .8rem;
-    font-family: 'Barlow Condensed', sans-serif;
-    letter-spacing: .1em;
+    color: rgba(255,255,255,.5); font-size: .8rem;
+    font-family: 'Barlow Condensed', sans-serif; letter-spacing: .1em;
   }
 
-  /* ── WHY US ── */
-  .why {
-    background: #fff;
-    padding: 5rem 0;
-  }
+  .why { background: #fff; padding: 5rem 0; }
   .why-grid {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 1rem; margin-top: 2.5rem;
@@ -527,23 +497,16 @@
   .why-item {
     display: flex; gap: 1rem;
     background: var(--gray-lite);
-    padding: 1.3rem 1.4rem;
-    border-radius: 5px;
+    padding: 1.3rem 1.4rem; border-radius: 5px;
     border-left: 3px solid var(--ice);
     transition: border-color .2s;
   }
   .why-item:hover { border-left-color: var(--orange); }
   .why-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: .1rem; }
-  .why-item h4 {
-    font-size: .92rem; font-weight: 700; color: var(--navy);
-    margin-bottom: .3rem;
-  }
+  .why-item h4 { font-size: .92rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
   .why-item p { font-size: .82rem; color: #6080A0; line-height: 1.6; }
 
-  .certs {
-    background: var(--navy2);
-    padding: 3.5rem 0;
-  }
+  .certs { background: var(--navy2); padding: 3.5rem 0; }
   .certs-header { text-align: center; margin-bottom: 2rem; }
   .certs-row {
     display: flex; justify-content: center;
@@ -552,8 +515,7 @@
   .cert-pill {
     background: rgba(255,255,255,.05);
     border: 1px solid rgba(255,255,255,.1);
-    padding: .75rem 1.5rem; border-radius: 4px;
-    text-align: center;
+    padding: .75rem 1.5rem; border-radius: 4px; text-align: center;
   }
   .cert-pill strong {
     display: block;
@@ -587,6 +549,7 @@
     color: var(--orange); font-weight: 600; font-size: .82rem;
   }
 
+  /* ── FOOTER ── */
   footer {
     background: #060F1C;
     padding: 1.2rem 0;
@@ -601,6 +564,39 @@
     font-size: 1.1rem; font-weight: 800; color: rgba(255,255,255,.3);
   }
   .footer-logo span { color: var(--orange); }
+
+  /* ── FACEBOOK ICON ── */
+  .footer-social {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .fb-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    transition: background .2s, border-color .2s, transform .15s;
+    text-decoration: none;
+  }
+  .fb-link:hover {
+    background: #1877F2;
+    border-color: #1877F2;
+    transform: translateY(-2px);
+  }
+  .fb-link svg {
+    width: 18px;
+    height: 18px;
+    fill: rgba(255,255,255,.5);
+    transition: fill .2s;
+  }
+  .fb-link:hover svg {
+    fill: #fff;
+  }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -631,21 +627,18 @@
   }
 
   .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-img {
-  width: 40px;   /* adjust size */
-  height: 40px;
-  object-fit: contain;
-}
-
-.logo-text {
-  font-weight: 700;
-  font-size: 18px;
-}
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-img {
+    width: 40px; height: 40px;
+    object-fit: contain;
+  }
+  .logo-text {
+    font-weight: 700;
+    font-size: 18px;
+  }
 </style>
 </head>
 <body>
@@ -653,12 +646,10 @@
 <!-- TOP BAR -->
 <header class="topbar">
   <div class="container topbar-inner">
-    
     <div class="logo">
       <img src="images/AYLogo.png" alt="A.Y. De Vera Logo" class="logo-img">
       <span class="logo-text">A.Y.<span>DE VERA</span></span>
     </div>
-
     <ul class="topbar-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -666,7 +657,6 @@
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
     <a href="#contact" class="topbar-cta">Get a Quote</a>
   </div>
 </header>
@@ -922,23 +912,7 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     GALLERY SECTION
-     ═══════════════════════════════════════════════════════
-     HOW TO ADD YOUR PHOTOS:
-     1. Place your image files in the same folder as this HTML
-        (e.g. an "images" subfolder)
-     2. Find each <div class="gallery-item"> below
-     3. Change the style="background-image: url('...')" to point
-        to your image file, e.g.: url('images/photo1.jpg')
-     4. To add more photos, copy any gallery-item block and
-        paste it inside .gallery-grid. Add class "hidden-photo"
-        to photos beyond the first 9 (they show on "Show More").
-
-     The first 9 photos show by default (3 rows of 3).
-     Photos with class "hidden-photo" appear when the
-     "Show More" button is clicked.
-     ═══════════════════════════════════════════════════════ -->
+<!-- GALLERY -->
 <section class="gallery" id="gallery">
   <div class="container">
     <div class="gallery-header">
@@ -949,136 +923,29 @@
     </div>
 
     <div class="gallery-grid" id="galleryGrid">
-
-      <!-- ── ROW 1 (always visible) ── -->
-
-      <!-- Photo 1: Replace url('') with your image path -->
-      <div class="gallery-item"
-           style="background-image: url('images/22.jpeg');"
-           data-index="0">
-      </div>
-
-      <!-- Photo 2 -->
-      <div class="gallery-item"
-           style="background-image: url('images/2.jpeg');"
-           data-index="1">
-      </div>
-
-      <!-- Photo 3 -->
-      <div class="gallery-item"
-           style="background-image: url('images/3.jpeg');"
-           data-index="2">
-      </div>
-
-      <!-- ── ROW 2 (always visible) ── -->
-
-      <!-- Photo 4 -->
-      <div class="gallery-item"
-           style="background-image: url('images/4.jpeg');"
-           data-index="3">
-      </div>
-
-      <!-- Photo 5 -->
-      <div class="gallery-item"
-           style="background-image: url('images/5.jpeg');"
-           data-index="4">
-      </div>
-
-      <!-- Photo 6 -->
-      <div class="gallery-item"
-           style="background-image: url('images/6.jpeg');"
-           data-index="5">
-      </div>
-
-      <!-- ── ROW 3 (always visible) ── -->
-
-      <!-- Photo 7 -->
-      <div class="gallery-item"
-           style="background-image: url('images/8.jpeg');"
-           data-index="6">
-      </div>
-
-      <!-- Photo 8 -->
-      <div class="gallery-item"
-           style="background-image: url('images/9.jpeg');"
-           data-index="7">
-      </div>
-
-      <!-- Photo 9 -->
-      <div class="gallery-item"
-           style="background-image: url('images/10.jpeg');"
-           data-index="8">
-      </div>
-
-      <!-- ════════════════════════════════════════════════
-           EXTRA PHOTOS (hidden until "Show More" clicked)
-           Add class="gallery-item hidden-photo" to hide them.
-           Copy and paste as many blocks as you need below.
-           ════════════════════════════════════════════════ -->
-
-      <!-- Photo 10 (hidden by default) -->
-      <div class="gallery-item hidden-photo"
-           style="background-image: url('images/1.jpeg');"
-           data-index="9">
-      </div>
-
-      <!-- Photo 11 (hidden by default) -->
-      <div class="gallery-item hidden-photo"
-           style="background-image: url('images/11.jpeg');"
-           data-index="10">
-      </div>
-
-      <!-- Photo 12 (hidden by default) -->
-      <div class="gallery-item hidden-photo"
-           style="background-image: url('images/12.jpeg');"
-           data-index="11">
-      </div>
-
-      <!-- Photo 13 (hidden by default) -->
-      <div class="gallery-item hidden-photo"
-           style="background-image: url('images/13.jpeg');"
-           data-index="12">
-      </div>
-
-        <!-- Photo 14 (hidden by default) -->
-      <div class="gallery-item hidden-photo"
-           style="background-image: url('images/14.jpeg');"
-           data-index="13">
-      </div>
-
-        <!-- Photo 15 (hidden by default) -->
-      <div class="gallery-item hidden-photo"
-           style="background-image: url('images/15.jpeg');"
-           data-index="14">
-      </div>
-
-          <!-- Photo 15 (hidden by default) -->
-      <div class="gallery-item hidden-photo"
-           style="background-image: url('images/17.jpeg');"
-           data-index="14">
-      </div>
-
-      <!-- Photo 15 (hidden by default) -->
-      <div class="gallery-item hidden-photo"
-           style="background-image: url('images/18.jpeg');"
-           data-index="14">
-      </div>
-
-       <!-- Photo 15 (hidden by default) -->
-      <div class="gallery-item hidden-photo"
-           style="background-image: url('images/19.jpeg');"
-           data-index="14">
-      </div>
-
-    </div><!-- /.gallery-grid -->
-
-    <!-- Show More / Show Less button -->
-    <div class="show-more-wrap">
-      <button class="btn-show-more" id="showMoreBtn" onclick="toggleGallery()">
-        Show More Photos
-      </button>
+      <div class="gallery-item" style="background-image: url('images/22.jpeg');" data-index="0"></div>
+      <div class="gallery-item" style="background-image: url('images/2.jpeg');" data-index="1"></div>
+      <div class="gallery-item" style="background-image: url('images/3.jpeg');" data-index="2"></div>
+      <div class="gallery-item" style="background-image: url('images/4.jpeg');" data-index="3"></div>
+      <div class="gallery-item" style="background-image: url('images/5.jpeg');" data-index="4"></div>
+      <div class="gallery-item" style="background-image: url('images/6.jpeg');" data-index="5"></div>
+      <div class="gallery-item" style="background-image: url('images/8.jpeg');" data-index="6"></div>
+      <div class="gallery-item" style="background-image: url('images/9.jpeg');" data-index="7"></div>
+      <div class="gallery-item" style="background-image: url('images/10.jpeg');" data-index="8"></div>
+      <div class="gallery-item hidden-photo" style="background-image: url('images/1.jpeg');" data-index="9"></div>
+      <div class="gallery-item hidden-photo" style="background-image: url('images/11.jpeg');" data-index="10"></div>
+      <div class="gallery-item hidden-photo" style="background-image: url('images/12.jpeg');" data-index="11"></div>
+      <div class="gallery-item hidden-photo" style="background-image: url('images/13.jpeg');" data-index="12"></div>
+      <div class="gallery-item hidden-photo" style="background-image: url('images/14.jpeg');" data-index="13"></div>
+      <div class="gallery-item hidden-photo" style="background-image: url('images/15.jpeg');" data-index="14"></div>
+      <div class="gallery-item hidden-photo" style="background-image: url('images/17.jpeg');" data-index="15"></div>
+      <div class="gallery-item hidden-photo" style="background-image: url('images/18.jpeg');" data-index="16"></div>
+      <div class="gallery-item hidden-photo" style="background-image: url('images/19.jpeg');" data-index="17"></div>
     </div>
 
+    <div class="show-more-wrap">
+      <button class="btn-show-more" id="showMoreBtn" onclick="toggleGallery()">Show More Photos</button>
+    </div>
   </div>
 </section>
 
@@ -1153,12 +1020,22 @@
 <footer>
   <div class="container footer-inner">
     <p>© 2025 A.Y. DE VERA HVAC &amp; Industrial Services. All rights reserved.</p>
+
+    <!-- Facebook icon -->
+    <div class="footer-social">
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
+         class="fb-link" title="Follow us on Facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+        </svg>
+      </a>
+    </div>
+
     <div class="footer-logo">A.Y.<span>De Vera</span></div>
   </div>
 </footer>
 
 <script>
-  // ── Collect all gallery images ──
   var galleryItems = [];
   var currentLightboxIndex = 0;
   var showingAll = false;
@@ -1173,7 +1050,6 @@
     });
   }
 
-  // ── Show More / Show Less ──
   function toggleGallery() {
     var hiddenItems = document.querySelectorAll('.gallery-item.hidden-photo');
     var btn = document.getElementById('showMoreBtn');
@@ -1188,15 +1064,11 @@
     }
   }
 
-  // ── Lightbox open ──
   function openLightbox(index) {
-    // Build a list of only items with actual images
     var visibleWithImages = galleryItems.filter(function(g) {
       return g.src !== '' && (showingAll || !g.el.classList.contains('hidden-photo') || g.el.classList.contains('visible'));
     });
     if (visibleWithImages.length === 0) return;
-
-    // Find position of clicked item in the filtered list
     currentLightboxIndex = index;
     showLightboxImage(currentLightboxIndex, visibleWithImages);
     document.getElementById('lightbox').classList.add('active');
@@ -1229,12 +1101,10 @@
     document.body.style.overflow = '';
   }
 
-  // ── Attach click handlers ──
   document.addEventListener('DOMContentLoaded', function() {
     buildGalleryIndex();
-
     var visibleIndex = 0;
-    galleryItems.forEach(function(g, i) {
+    galleryItems.forEach(function(g) {
       if (g.src !== '') {
         (function(capturedVisibleIndex) {
           g.el.addEventListener('click', function() {
@@ -1244,15 +1114,12 @@
         visibleIndex++;
       }
     });
-
-    // Hide show-more button if there are no hidden photos
     var hiddenItems = document.querySelectorAll('.gallery-item.hidden-photo');
     if (hiddenItems.length === 0) {
       document.getElementById('showMoreBtn').style.display = 'none';
     }
   });
 
-  // ── Keyboard navigation ──
   document.addEventListener('keydown', function(e) {
     if (!document.getElementById('lightbox').classList.contains('active')) return;
     if (e.key === 'Escape') closeLightbox();
@@ -1260,7 +1127,6 @@
     if (e.key === 'ArrowRight') navigateLightbox(1);
   });
 
-  // Close on backdrop click
   document.getElementById('lightbox').addEventListener('click', function(e) {
     if (e.target === this || e.target.classList.contains('lightbox-inner')) {
       closeLightbox();
