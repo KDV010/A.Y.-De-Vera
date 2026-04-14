@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>A.Y. De Vera – Company Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy:      #98c1d9;
+    --navy2:     #dadada;
+    --steel:     #2672c8;
+    --ice:       #e0fbfc;
+    --orange:    #2672c8;
+    --orange2:   #FF7A2F;
+    --gray-dark: #1E2D3D;
+    --gray-mid:  #2c3036;
+    --gray-lite: #ededed;
+    --white:     #ffffffb8;
+    --text:      #1C2B3A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  .orange { color: var(--orange); }
+  .tag {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .2rem .7rem;
+    border-radius: 2px;
+  }
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: .5rem;
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: .75rem;
+  }
+  .section-title.light { color: #fff; }
+  .section-body {
+    font-size: .97rem;
+    font-weight: 400;
+    color: #4A6070;
+    line-height: 1.7;
+    max-width: 680px;
+  }
+  .section-body.light { color: var(--gray-mid); }
+  .divider {
+    width: 48px; height: 4px;
+    background: var(--orange);
+    border-radius: 2px;
+    margin-bottom: 1.2rem;
+  }
+
+  .topbar {
+    background: var(--navy);
+    padding: .7rem 0;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .topbar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: .03em;
+  }
+  .logo span { color: var(--orange); }
+  .topbar-links {
+    display: flex; gap: 1.8rem;
+    list-style: none;
+  }
+  .topbar-links a {
+    font-size: .82rem; font-weight: 500;
+    color: var(--gray-mid);
+    text-decoration: none;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+  .topbar-links a:hover { color: var(--orange); }
+  .topbar-cta {
+    background: var(--orange);
+    color: #fff;
+    font-size: .8rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: .45rem 1.2rem;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .topbar-cta:hover { background: var(--orange2); }
+
+  .hero {
+    position: relative;
+    background: var(--navy);
+    padding: 6rem 0 5rem;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 80% at 90% 50%, rgba(26,78,138,.5) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 50% at 10% 80%, rgba(232,104,26,.15) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: .04;
+    background-image:
+      linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(232,104,26,.12);
+    border: 1px solid rgba(232,104,26,.3);
+    color: var(--orange);
+    font-size: .75rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase;
+    padding: .35rem .9rem; border-radius: 2px;
+    margin-bottom: 1.4rem;
+  }
+  .hero-badge::before { content: '●'; font-size: .45rem; }
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: -.01em;
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 .accent { color: var(--orange); display: block; }
+  .hero-sub {
+    font-size: 1.05rem; font-weight: 300;
+    color: rgba(255,255,255,.65);
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 2.2rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--orange);
+    color: #fff; font-weight: 700; font-size: .88rem;
+    letter-spacing: .07em; text-transform: uppercase;
+    padding: .8rem 1.8rem; border-radius: 3px;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--orange2); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,.25);
+    color: rgba(255,255,255,.8); font-weight: 600; font-size: .88rem;
+    letter-spacing: .07em; text-transform: uppercase;
+    padding: .8rem 1.8rem; border-radius: 3px;
+    text-decoration: none;
+    transition: border-color .2s, color .2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3.5rem;
+    flex-wrap: wrap;
+  }
+  .hero-stat {}
+  .hero-stat .num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.4rem; font-weight: 800;
+    color: var(--orange); line-height: 1;
+  }
+  .hero-stat .lbl {
+    font-size: .78rem; color: var(--gray-mid);
+    letter-spacing: .08em; text-transform: uppercase;
+    margin-top: .2rem;
+  }
+  .hero-badge-strip {
+    display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2.5rem;
+  }
+  .h-badge {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    color: rgba(255,255,255,.6);
+    font-size: .75rem; font-weight: 500;
+    padding: .3rem .8rem; border-radius: 2px;
+  }
+
+  .about {
+    background: #fff;
+    padding: 5rem 0;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .about-visual { position: relative; }
+  .about-card-main {
+    background: var(--navy2);
+    border-radius: 6px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card-main::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--steel));
+  }
+  .about-card-main h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem; font-weight: 800;
+    color: #fff; margin-bottom: 1rem;
+  }
+  .about-card-main p {
+    font-size: .88rem; color: var(--gray-mid); line-height: 1.7;
+  }
+  .about-stats-mini {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: .8rem; margin-top: 1.5rem;
+  }
+  .mini-stat {
+    background: rgba(29, 29, 29, 0.04);
+    border: 1px solid rgba(255,255,255,.07);
+    padding: .9rem 1rem; border-radius: 4px;
+    text-align: center;
+  }
+  .mini-stat .v {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.7rem; font-weight: 800; color: var(--orange);
+  }
+  .mini-stat .l {
+    font-size: .72rem; color: var(--gray-mid);
+    text-transform: uppercase; letter-spacing: .07em;
+  }
+  .values-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: .7rem; margin-top: 1.5rem;
+  }
+  .val-item {
+    display: flex; align-items: flex-start; gap: .6rem;
+    background: var(--gray-lite);
+    padding: .75rem; border-radius: 4px;
+  }
+  .val-icon { font-size: 1.1rem; margin-top: .05rem; }
+  .val-item strong {
+    display: block; font-size: .82rem; font-weight: 700;
+    color: var(--navy); margin-bottom: .15rem;
+  }
+  .val-item span { font-size: .76rem; color: #6080A0; }
+
+  .services {
+    background: var(--gray-lite);
+    padding: 5rem 0;
+  }
+  .services-header { text-align: center; margin-bottom: 3rem; }
+  .services-header .divider { margin: 0 auto 1.2rem; }
+  .services-header .section-body { margin: 0 auto; text-align: center; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+  .svc-card {
+    background: #fff;
+    border-radius: 6px;
+    padding: 1.8rem;
+    border-top: 3px solid transparent;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+    position: relative; overflow: hidden;
+  }
+  .svc-card:hover {
+    border-top-color: var(--orange);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,.1);
+  }
+  .svc-icon {
+    width: 46px; height: 46px;
+    background: var(--ice);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .svc-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--navy); margin-bottom: .5rem;
+  }
+  .svc-card p {
+    font-size: .84rem; color: #6080A0; line-height: 1.6;
+    margin-bottom: .9rem;
+  }
+  .svc-list { list-style: none; }
+  .svc-list li {
+    font-size: .8rem; color: var(--text);
+    padding: .2rem 0;
+    display: flex; align-items: center; gap: .45rem;
+  }
+  .svc-list li::before {
+    content: '▸'; color: var(--orange); font-size: .7rem;
+    flex-shrink: 0;
+  }
+
+  .projects {
+    background: var(--navy);
+    padding: 5rem 0;
+    position: relative; overflow: hidden;
+  }
+  .projects::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,78,138,.4), transparent 70%);
+    pointer-events: none;
+  }
+  .projects-header { margin-bottom: 2.5rem; }
+  .projects-table {
+    width: 100%; border-collapse: collapse;
+    background: rgba(255,255,255,.03);
+    border-radius: 8px; overflow: hidden;
+  }
+  .projects-table thead tr {
+    background: rgba(232,104,26,.15);
+    border-bottom: 2px solid var(--orange);
+  }
+  .projects-table th {
+    padding: .9rem 1.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: .8rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--orange); text-align: left;
+  }
+  .projects-table tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    transition: background .15s;
+  }
+  .projects-table tbody tr:hover { background: rgba(255,255,255,.04); }
+  .projects-table td {
+    padding: 1rem 1.2rem;
+    font-size: .87rem; color: rgba(255,255,255,.75);
+    vertical-align: top; line-height: 1.5;
+  }
+  .proj-name {
+    font-weight: 600; color: #fff;
+    font-size: .9rem; margin-bottom: .2rem;
+  }
+  .proj-desc { font-size: .8rem; color: var(--gray-mid); }
+  .proj-badge {
+    display: inline-block;
+    background: rgba(26,78,138,.4);
+    border: 1px solid rgba(26,78,138,.6);
+    color: var(--ice);
+    font-size: .7rem; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase;
+    padding: .15rem .55rem; border-radius: 2px;
+  }
+
+  /* ── GALLERY ── */
+  .gallery {
+    background: var(--gray-lite);
+    padding: 5rem 0;
+  }
+  .gallery-header { text-align: center; margin-bottom: 3rem; }
+  .gallery-header .divider { margin: 0 auto 1.2rem; }
+  .gallery-header .section-body { margin: 0 auto; text-align: center; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #c8d8e4;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    aspect-ratio: 4/3;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    z-index: 2;
+  }
+
+  /* Hide extra rows beyond the first 3 */
+  .gallery-item.hidden-photo {
+    display: none;
+  }
+  .gallery-item.hidden-photo.visible {
+    display: block;
+  }
+
+  .show-more-wrap {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .btn-show-more {
+    background: transparent;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .7rem 2rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+  }
+  .btn-show-more:hover {
+    background: var(--orange);
+    color: #fff;
+  }
+
+  /* ── LIGHTBOX ── */
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(5,15,28,.95);
+    align-items: center; justify-content: center;
+  }
+  .lightbox.active { display: flex; }
+
+  .lightbox-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .lightbox-img {
+    max-width: 85vw;
+    max-height: 85vh;
+    border-radius: 4px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .lightbox-close {
+    position: fixed; top: 1.2rem; right: 1.5rem;
+    color: #fff; font-size: 2rem; cursor: pointer;
+    background: none; border: none; line-height: 1;
+    opacity: .7; transition: opacity .2s;
+    z-index: 10001;
+  }
+  .lightbox-close:hover { opacity: 1; }
+
+  .lightbox-nav {
+    position: fixed;
+    top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    color: #fff;
+    font-size: 1.6rem;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: background .2s;
+    z-index: 10001;
+    user-select: none;
+  }
+  .lightbox-nav:hover { background: rgba(255,255,255,.2); }
+  .lightbox-prev { left: 1.5rem; }
+  .lightbox-next { right: 1.5rem; }
+
+  .lightbox-counter {
+    position: fixed; bottom: 1.5rem; left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,.5);
+    font-size: .8rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: .1em;
+  }
+
+  /* ── WHY US ── */
+  .why {
+    background: #fff;
+    padding: 5rem 0;
+  }
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin-top: 2.5rem;
+  }
+  .why-item {
+    display: flex; gap: 1rem;
+    background: var(--gray-lite);
+    padding: 1.3rem 1.4rem;
+    border-radius: 5px;
+    border-left: 3px solid var(--ice);
+    transition: border-color .2s;
+  }
+  .why-item:hover { border-left-color: var(--orange); }
+  .why-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: .1rem; }
+  .why-item h4 {
+    font-size: .92rem; font-weight: 700; color: var(--navy);
+    margin-bottom: .3rem;
+  }
+  .why-item p { font-size: .82rem; color: #6080A0; line-height: 1.6; }
+
+  .certs {
+    background: var(--navy2);
+    padding: 3.5rem 0;
+  }
+  .certs-header { text-align: center; margin-bottom: 2rem; }
+  .certs-row {
+    display: flex; justify-content: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .cert-pill {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    padding: .75rem 1.5rem; border-radius: 4px;
+    text-align: center;
+  }
+  .cert-pill strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem; font-weight: 700; color: var(--orange);
+  }
+  .cert-pill span { font-size: .75rem; color: var(--gray-mid); }
+
+  .contact {
+    background: var(--navy);
+    padding: 5rem 0;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+  .contact-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 2rem; margin-top: 2.5rem;
+  }
+  .contact-block h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--orange); text-transform: uppercase;
+    letter-spacing: .1em; margin-bottom: .8rem;
+  }
+  .contact-block p, .contact-block a {
+    font-size: .88rem; color: var(--gray-mid); line-height: 1.8;
+    text-decoration: none; display: block;
+  }
+  .contact-block a:hover { color: var(--orange); }
+  .contact-block .hours-note {
+    margin-top: .5rem;
+    color: var(--orange); font-weight: 600; font-size: .82rem;
+  }
+
+  footer {
+    background: #060F1C;
+    padding: 1.2rem 0;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer p { font-size: .75rem; color: #3A5070; }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem; font-weight: 800; color: rgba(255,255,255,.3);
+  }
+  .footer-logo span { color: var(--orange); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero > .container > * { animation: fadeUp .7s ease both; }
+  .hero > .container > *:nth-child(1) { animation-delay: .1s; }
+  .hero > .container > *:nth-child(2) { animation-delay: .2s; }
+  .hero > .container > *:nth-child(3) { animation-delay: .3s; }
+  .hero > .container > *:nth-child(4) { animation-delay: .4s; }
+  .hero > .container > *:nth-child(5) { animation-delay: .5s; }
+
+  @media (max-width: 900px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .topbar-links, .topbar-cta { display: none; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    .topbar { position: static; }
+    .svc-card, .why-item { break-inside: avoid; }
+  }
+
+  .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 40px;   /* adjust size */
+  height: 40px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="container topbar-inner">
+    
+    <div class="logo">
+      <img src="images/AYLogo.png" alt="A.Y. De Vera Logo" class="logo-img">
+      <span class="logo-text">A.Y.<span>DE VERA</span></span>
+    </div>
+
+    <ul class="topbar-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="topbar-cta">Get a Quote</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="container" style="position:relative;">
+    <div class="hero-badge">Est. 2012 &nbsp;·&nbsp; Philippines</div>
+    <h1>
+      A.Y. De Vera <br/>
+      <span class="accent">Air-conditioning & Industrial</span>
+      Services
+    </h1>
+    <p class="hero-sub">
+      A.Y. De Vera delivers end-to-end HVAC engineering, ducting, industrial mechanical services,
+      and long-term maintenance programs trusted by leading enterprises nationwide.
+    </p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#projects" class="btn-outline">View Projects</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">10+</div><div class="lbl">Years in Business</div></div>
+      <div class="hero-stat"><div class="num">100+</div><div class="lbl">Projects Completed</div></div>
+      <div class="hero-stat"><div class="num">30+</div><div class="lbl">Expert Technicians</div></div>
+      <div class="hero-stat"><div class="num">50+</div><div class="lbl">Enterprise Clients</div></div>
+    </div>
+    <div class="hero-badge-strip">
+      <span class="h-badge">ISO 9001:2015</span>
+      <span class="h-badge">PRC Licensed Engineers</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="section-label">Who We Are</p>
+        <div class="divider"></div>
+        <h2 class="section-title">Built on Engineering Excellence</h2>
+        <p class="section-body">
+          A.Y. De Vera &amp; Industrial Services is a premier provider of heating,
+          ventilation, air-conditioning, and industrial mechanical solutions across the
+          Philippines. Founded in 2012, we have built a reputation for technical excellence,
+          on-time delivery, and lasting client relationships in both commercial and
+          industrial sectors.
+        </p>
+        <div class="values-grid" style="margin-top:1.8rem;">
+          <div class="val-item"><span class="val-icon">🔧</span><div><strong>Technical Excellence</strong><span>World-class standards on every job</span></div></div>
+          <div class="val-item"><span class="val-icon">🤝</span><div><strong>Client-First</strong><span>Your success is our measure</span></div></div>
+          <div class="val-item"><span class="val-icon">🌿</span><div><strong>Sustainability</strong><span>Green-aligned engineering</span></div></div>
+          <div class="val-item"><span class="val-icon">🛡️</span><div><strong>Safety First</strong><span>Zero-LTI record, 14 years running</span></div></div>
+          <div class="val-item"><span class="val-icon">⚡</span><div><strong>Rapid Response</strong><span>2-hour emergency SLA</span></div></div>
+          <div class="val-item"><span class="val-icon">📐</span><div><strong>Precision</strong><span>Engineered to exact spec</span></div></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-card-main">
+          <h3>Our Mission &amp; Vision</h3>
+          <p style="margin-bottom:1rem;">
+            To deliver superior HVAC and industrial services that enhance comfort,
+            operational efficiency, and safety — powered by skilled professionals
+            and cutting-edge technology.
+          </p>
+          <p>
+            To be the most trusted HVAC and industrial services company in Southeast Asia,
+            recognized for innovation, sustainability, and uncompromising quality.
+          </p>
+          <div class="about-stats-mini">
+            <div class="mini-stat"><div class="v">18+</div><div class="l">Years</div></div>
+            <div class="mini-stat"><div class="v">100+</div><div class="l">Projects</div></div>
+            <div class="mini-stat"><div class="v">30+</div><div class="l">Technicians</div></div>
+            <div class="mini-stat"><div class="v">50+</div><div class="l">Clients</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <p class="section-label">What We Do</p>
+      <div class="divider"></div>
+      <h2 class="section-title">Comprehensive Services</h2>
+      <p class="section-body">From design and installation to maintenance and industrial solutions — all under one roof.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">❄️</div>
+        <h3>HVAC Installation &amp; Design</h3>
+        <p>End-to-end design and installation of commercial and industrial HVAC systems.</p>
+        <ul class="svc-list">
+          <li>HVAC Installation & Design</li>
+          <li>Central AC &amp; VRF Systems</li>
+          <li>Chiller Plant Design</li>
+          <li>Ducting &amp; Air Distribution</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔧</div>
+        <h3>HVAC Maintenance &amp; Repair</h3>
+        <p>Preventive and corrective maintenance to keep systems at peak performance.</p>
+        <ul class="svc-list">
+          <li>Scheduled PM Programs</li>
+          <li>24/7 Emergency Repair</li>
+          <li>Filter &amp; Coil Cleaning</li>
+          <li>Refrigerant Handling</li>
+          <li>Performance Testing</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏭</div>
+        <h3>Industrial Mechanical Services</h3>
+        <p>Heavy-duty mechanical services for industrial facilities and plants.</p>
+        <ul class="svc-list">
+          <li>Piping &amp; Plumbing Works</li>
+          <li>Industrial Ventilation</li>
+          <li>Compressed Air Systems</li>
+          <li>Cooling Tower Services</li>
+          <li>Pump &amp; Motor Works</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🧪</div>
+        <h3>Cleanroom &amp; Special Environments</h3>
+        <p>Precision-controlled environments for critical industries.</p>
+        <ul class="svc-list">
+          <li>Cleanroom HVAC Design</li>
+          <li>Pharmaceutical Compliance</li>
+          <li>Data Center Cooling</li>
+          <li>Humidity &amp; Pressure Control</li>
+          <li>HEPA Filtration Systems</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📊</div>
+        <h3>Energy Audit &amp; Optimization</h3>
+        <p>Identify inefficiencies and reduce operational costs with data-driven insights.</p>
+        <ul class="svc-list">
+          <li>Thermal Imaging Surveys</li>
+          <li>Load Analysis &amp; Rightsizing</li>
+          <li>ASHRAE-Based Audits</li>
+          <li>Retrofit &amp; Upgrade Planning</li>
+          <li>ROI Reporting</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🧊</div>
+        <h3>Refrigeration Services</h3>
+        <p>Commercial and industrial refrigeration installation and servicing.</p>
+        <ul class="svc-list">
+          <li>Cold Storage Design</li>
+          <li>Walk-In Coolers &amp; Freezers</li>
+          <li>Process Cooling Systems</li>
+          <li>Refrigerant Recovery</li>
+          <li>Food Safety Compliance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="container" style="position:relative;">
+    <div class="projects-header">
+      <p class="section-label">Our Work</p>
+      <div class="divider"></div>
+      <h2 class="section-title light">Featured Projects</h2>
+      <p class="section-body light">A selection of our landmark completed works across the Philippines.</p>
+    </div>
+    <table class="projects-table">
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Location</th>
+          <th>Year</th>
+          <th>Sector</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="proj-name">Northfield Laboratories – Ducting</div>
+            <div class="proj-desc">Full HVAC design and installation for a 45,000 sqm retail expansion.</div>
+          </td>
+          <td>Tikay, Malolos City</td>
+          <td>2012 up to present (present project: Classified rooms for pro-biotics products)</td>
+          <td><span class="proj-badge">Pharmaceutical</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="proj-name">LLoyd Laboratories – Ducting</div>
+            <div class="proj-desc">Penicillin class 100,000 classified area HVAC system</div>
+          </td>
+          <td>Tikay, Malolos City</td>
+          <td>2014 - Present</td>
+          <td><span class="proj-badge">Pharmaceutical / F&amp;B</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="proj-name">AD Drugstel Laboratories Inc. – Ducting</div>
+            <div class="proj-desc">Cleanroom HVAC and infection-control ventilation for a new critical care wing. Fully compliant with BFAD Standard.</div>
+          </td>
+          <td>Tikay, Malolos City</td>
+          <td>2023</td>
+          <td><span class="proj-badge">Pharmaceutical</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="proj-name">Philmed Laboratories – Ducting</div>
+            <div class="proj-desc">Central HVAC for cosmetics area ventilation</div>
+          </td>
+          <td>Concepcion, Marikina City</td>
+          <td>2021</td>
+          <td><span class="proj-badge">Pharmaceutical</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="proj-name">Prima Plastic Corporation – Chiller and HVAC</div>
+            <div class="proj-desc">Chiller HVAC repair and installation and recoiling of evaporation coil</div>
+          </td>
+          <td>Tikay, Malolos City</td>
+          <td>2022</td>
+          <td><span class="proj-badge">Plastic Manufacturing</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="proj-name">Pulilan Rice Mill – Exhaust and Ducting</div>
+            <div class="proj-desc">Installation of Exhaust Ducts</div>
+          </td>
+          <td>Pulilan, Bulacan</td>
+          <td>2022</td>
+          <td><span class="proj-badge">Rice Mill</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="proj-name">Europrint – Exhaust and Ducting</div>
+            <div class="proj-desc">Complete installation of Exhaust ducts</div>
+          </td>
+          <td>Marikina</td>
+          <td>2022</td>
+          <td><span class="proj-badge">Printing</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     GALLERY SECTION
+     ═══════════════════════════════════════════════════════
+     HOW TO ADD YOUR PHOTOS:
+     1. Place your image files in the same folder as this HTML
+        (e.g. an "images" subfolder)
+     2. Find each <div class="gallery-item"> below
+     3. Change the style="background-image: url('...')" to point
+        to your image file, e.g.: url('images/photo1.jpg')
+     4. To add more photos, copy any gallery-item block and
+        paste it inside .gallery-grid. Add class "hidden-photo"
+        to photos beyond the first 9 (they show on "Show More").
+
+     The first 9 photos show by default (3 rows of 3).
+     Photos with class "hidden-photo" appear when the
+     "Show More" button is clicked.
+     ═══════════════════════════════════════════════════════ -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-header">
+      <p class="section-label">Our Work in Photos</p>
+      <div class="divider"></div>
+      <h2 class="section-title">Project Gallery</h2>
+      <p class="section-body">A look at our installations, teams, and completed works across the Philippines.</p>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+
+      <!-- ── ROW 1 (always visible) ── -->
+
+      <!-- Photo 1: Replace url('') with your image path -->
+      <div class="gallery-item"
+           style="background-image: url('images/22.jpeg');"
+           data-index="0">
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="gallery-item"
+           style="background-image: url('images/2.jpeg');"
+           data-index="1">
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="gallery-item"
+           style="background-image: url('images/3.jpeg');"
+           data-index="2">
+      </div>
+
+      <!-- ── ROW 2 (always visible) ── -->
+
+      <!-- Photo 4 -->
+      <div class="gallery-item"
+           style="background-image: url('images/4.jpeg');"
+           data-index="3">
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="gallery-item"
+           style="background-image: url('images/5.jpeg');"
+           data-index="4">
+      </div>
+
+      <!-- Photo 6 -->
+      <div class="gallery-item"
+           style="background-image: url('images/6.jpeg');"
+           data-index="5">
+      </div>
+
+      <!-- ── ROW 3 (always visible) ── -->
+
+      <!-- Photo 7 -->
+      <div class="gallery-item"
+           style="background-image: url('images/8.jpeg');"
+           data-index="6">
+      </div>
+
+      <!-- Photo 8 -->
+      <div class="gallery-item"
+           style="background-image: url('images/9.jpeg');"
+           data-index="7">
+      </div>
+
+      <!-- Photo 9 -->
+      <div class="gallery-item"
+           style="background-image: url('images/10.jpeg');"
+           data-index="8">
+      </div>
+
+      <!-- ════════════════════════════════════════════════
+           EXTRA PHOTOS (hidden until "Show More" clicked)
+           Add class="gallery-item hidden-photo" to hide them.
+           Copy and paste as many blocks as you need below.
+           ════════════════════════════════════════════════ -->
+
+      <!-- Photo 10 (hidden by default) -->
+      <div class="gallery-item hidden-photo"
+           style="background-image: url('images/1.jpeg');"
+           data-index="9">
+      </div>
+
+      <!-- Photo 11 (hidden by default) -->
+      <div class="gallery-item hidden-photo"
+           style="background-image: url('images/11.jpeg');"
+           data-index="10">
+      </div>
+
+      <!-- Photo 12 (hidden by default) -->
+      <div class="gallery-item hidden-photo"
+           style="background-image: url('images/12.jpeg');"
+           data-index="11">
+      </div>
+
+      <!-- Photo 13 (hidden by default) -->
+      <div class="gallery-item hidden-photo"
+           style="background-image: url('images/13.jpeg');"
+           data-index="12">
+      </div>
+
+        <!-- Photo 14 (hidden by default) -->
+      <div class="gallery-item hidden-photo"
+           style="background-image: url('images/14.jpeg');"
+           data-index="13">
+      </div>
+
+        <!-- Photo 15 (hidden by default) -->
+      <div class="gallery-item hidden-photo"
+           style="background-image: url('images/15.jpeg');"
+           data-index="14">
+      </div>
+
+          <!-- Photo 15 (hidden by default) -->
+      <div class="gallery-item hidden-photo"
+           style="background-image: url('images/17.jpeg');"
+           data-index="14">
+      </div>
+
+      <!-- Photo 15 (hidden by default) -->
+      <div class="gallery-item hidden-photo"
+           style="background-image: url('images/18.jpeg');"
+           data-index="14">
+      </div>
+
+       <!-- Photo 15 (hidden by default) -->
+      <div class="gallery-item hidden-photo"
+           style="background-image: url('images/19.jpeg');"
+           data-index="14">
+      </div>
+
+    </div><!-- /.gallery-grid -->
+
+    <!-- Show More / Show Less button -->
+    <div class="show-more-wrap">
+      <button class="btn-show-more" id="showMoreBtn" onclick="toggleGallery()">
+        Show More Photos
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#8592;</button>
+  <div class="lightbox-inner">
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+  </div>
+  <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#8594;</button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="container">
+    <p class="section-label">Why A.Y. De Vera</p>
+    <div class="divider"></div>
+    <h2 class="section-title">The A.Y. De Vera Advantage</h2>
+    <div class="why-grid">
+      <div class="why-item"><span class="why-icon">🏗️</span><div><h4>Turnkey Capability</h4><p>From design and supply to installation, commissioning, and long-term maintenance — all under one roof.</p></div></div>
+      <div class="why-item"><span class="why-icon">🛡️</span><div><h4>Safety-First Culture</h4><p>Zero-LTI record for the past 14 years. Full compliance with DOLE, OSHS, and international safety standards.</p></div></div>
+      <div class="why-item"><span class="why-icon">📡</span><div><h4>Data-Driven Maintenance</h4><p>IoT-based monitoring and predictive maintenance platforms for proactive system management and uptime assurance.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs">
+  <div class="container">
+    <div class="certs-header">
+      <p class="section-label" style="color:var(--gray-mid);">Recognized By</p>
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;">Certifications &amp; Accreditations</h3>
+    </div>
+    <div class="certs-row">
+      <div class="cert-pill"><strong>PRC Licensed</strong><span>Engineers &amp; Technicians</span></div>
+      <div class="cert-pill"><strong>BFAD Accredited</strong><span>Healthcare Facilities</span></div>
+      <div class="cert-pill"><strong>TESDA Accredited</strong><span>Technical Training</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <p class="section-label">Reach Us</p>
+    <div class="divider"></div>
+    <h2 class="section-title light">Get In Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-block">
+        <h4>Head Office</h4>
+        <p>485 Purok 3, Santor Malolos City</p>
+        <p>Philippines 3000</p>
+      </div>
+      <div class="contact-block">
+        <h4>Contact Details</h4>
+        <a href="tel:+639399224919">📞 +63939 922 4919</a>
+        <a href="mailto:adriandevera0615@yahoo.com">✉ adriandevera0615@yahoo.com</a>
+      </div>
+      <div class="contact-block">
+        <h4>Business Hours</h4>
+        <p>Monday – Friday: 8:00 AM – 6:00 PM</p>
+        <p>Saturday: 8:00 AM – 12:00 PM</p>
+        <p class="hours-note">⚡ 24/7 Emergency Hotline Available</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <p>© 2025 A.Y. DE VERA HVAC &amp; Industrial Services. All rights reserved.</p>
+    <div class="footer-logo">A.Y.<span>De Vera</span></div>
+  </div>
+</footer>
+
+<script>
+  // ── Collect all gallery images ──
+  var galleryItems = [];
+  var currentLightboxIndex = 0;
+  var showingAll = false;
+
+  function buildGalleryIndex() {
+    galleryItems = [];
+    document.querySelectorAll('.gallery-item').forEach(function(item) {
+      var style = item.getAttribute('style') || '';
+      var match = style.match(/url\(['"]?([^'")]+)['"]?\)/);
+      var src = (match && match[1]) ? match[1].trim() : '';
+      galleryItems.push({ el: item, src: src });
+    });
+  }
+
+  // ── Show More / Show Less ──
+  function toggleGallery() {
+    var hiddenItems = document.querySelectorAll('.gallery-item.hidden-photo');
+    var btn = document.getElementById('showMoreBtn');
+    if (!showingAll) {
+      hiddenItems.forEach(function(item) { item.classList.add('visible'); });
+      btn.textContent = 'Show Less';
+      showingAll = true;
+    } else {
+      hiddenItems.forEach(function(item) { item.classList.remove('visible'); });
+      btn.textContent = 'Show More Photos';
+      showingAll = false;
+    }
+  }
+
+  // ── Lightbox open ──
+  function openLightbox(index) {
+    // Build a list of only items with actual images
+    var visibleWithImages = galleryItems.filter(function(g) {
+      return g.src !== '' && (showingAll || !g.el.classList.contains('hidden-photo') || g.el.classList.contains('visible'));
+    });
+    if (visibleWithImages.length === 0) return;
+
+    // Find position of clicked item in the filtered list
+    currentLightboxIndex = index;
+    showLightboxImage(currentLightboxIndex, visibleWithImages);
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showLightboxImage(idx, list) {
+    if (!list) {
+      list = galleryItems.filter(function(g) {
+        return g.src !== '' && (showingAll || !g.el.classList.contains('hidden-photo') || g.el.classList.contains('visible'));
+      });
+    }
+    if (list.length === 0) return;
+    idx = (idx + list.length) % list.length;
+    currentLightboxIndex = idx;
+    document.getElementById('lightbox-img').src = list[idx].src;
+    document.getElementById('lightbox-counter').textContent = (idx + 1) + ' / ' + list.length;
+  }
+
+  function navigateLightbox(dir) {
+    var list = galleryItems.filter(function(g) {
+      return g.src !== '' && (showingAll || !g.el.classList.contains('hidden-photo') || g.el.classList.contains('visible'));
+    });
+    showLightboxImage(currentLightboxIndex + dir, list);
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightbox-img').src = '';
+    document.body.style.overflow = '';
+  }
+
+  // ── Attach click handlers ──
+  document.addEventListener('DOMContentLoaded', function() {
+    buildGalleryIndex();
+
+    var visibleIndex = 0;
+    galleryItems.forEach(function(g, i) {
+      if (g.src !== '') {
+        (function(capturedVisibleIndex) {
+          g.el.addEventListener('click', function() {
+            openLightbox(capturedVisibleIndex);
+          });
+        })(visibleIndex);
+        visibleIndex++;
+      }
+    });
+
+    // Hide show-more button if there are no hidden photos
+    var hiddenItems = document.querySelectorAll('.gallery-item.hidden-photo');
+    if (hiddenItems.length === 0) {
+      document.getElementById('showMoreBtn').style.display = 'none';
+    }
+  });
+
+  // ── Keyboard navigation ──
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigateLightbox(-1);
+    if (e.key === 'ArrowRight') navigateLightbox(1);
+  });
+
+  // Close on backdrop click
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('lightbox-inner')) {
+      closeLightbox();
+    }
+  });
+</script>
+
+</body>
+</html>
